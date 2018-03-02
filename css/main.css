@@ -1,0 +1,114 @@
+/* Some css will go here */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background: #343a40!important;
+  text-align: right;
+  padding: 19px 16px;
+}
+
+.navbar a {
+  color: #fff;
+  margin-right: 16px;
+  text-decoration: none;
+  background:
+}
+
+.navbar a:last-child {
+  margin-right: 0;
+}
+
+.navbar a.logo {
+  float: left;
+  color: #bebebe;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.content {
+  padding: 25px 16px;
+}
+
+.content header {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.filter {
+  padding: 16px 0;
+}
+
+.filter select {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  width: 100px;
+  height: 32px;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.posts {
+  margin-top: 0;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.posts li {
+  padding: 16px;
+  list-style-position: inside;
+}
+
+.posts li:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.posts li:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.posts li:hover {
+  background: #f5f5f5;
+}
+
+.audio-container {
+  width: 80%;
+  height: 100px;
+  position: relative;
+  background: #fff;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.06);
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.06);
+  margin: auto auto 16px auto;
+}
+
+.audio-container audio {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.audio-container .audio-name {
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #b7b3b3;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .audio-container {
+    width: 100%;
+  }
+}
