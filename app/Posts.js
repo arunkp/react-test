@@ -11,10 +11,12 @@ class Posts extends React.Component {
       _allPosts: [],
       _posts: [],
       _groups: [],
-      _filterGroup: "All"
+      _filterGroup: "All",
+      _sorted: false
     }
     this.filterPosts = this.filterPosts.bind(this);
     this.showPosts = this.showPosts.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
 	}
 	render() {
 		return (
@@ -31,6 +33,17 @@ class Posts extends React.Component {
               })}
             </select>
           </div>
+          <div className="filter">
+            <label>
+              Sort By
+            </label>
+            <input
+              id="sortcheck"
+            name="isGoing"
+            type="checkbox"
+            checked={this.state._sorted}
+            onChange={this.handleInputChange} />
+          </div>
           <ol className="posts">
             {this.state._posts.map(function(post){
               return <Post title={post.title} key={post.id} group={post.userId}/>
@@ -38,6 +51,7 @@ class Posts extends React.Component {
           </ol>
         </div>
       </div>
+
 			)
 	}
   componentDidMount() {
@@ -77,6 +91,30 @@ class Posts extends React.Component {
     })
     this.setState({
       _posts: new_posts
+    })
+  }
+
+  handleInputChange(event) {
+    console.log(event.target.checked);
+    if(!this.state._sorted) {
+      this.sort();
+    }else {
+      this.setState({
+        _sorted: false
+      })
+    }
+  }
+
+  sort() {
+    let sortedPosts = this.state._posts;
+    sortedPosts.sort(function(a, b) {
+          var textA = a.title.toUpperCase();
+          var textB = b.title.toUpperCase();
+          return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+      });
+    this.setState({
+      _posts: sortedPosts,
+      _sorted: true
     })
   }
 }
