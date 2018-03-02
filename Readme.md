@@ -1,6 +1,6 @@
-# React Starter kit for anyone starting a project. ---No shit starter---.
+# React Test Solution
 
-This repo is helpful if you want to start a react project without any extra unwanted npm packages.
+This Application has two routes, feel free to explore the code to learn about react, react router, webpack and more.
 
 ## Running the code
 
